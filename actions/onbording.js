@@ -5,9 +5,9 @@ import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
 export async function setUserRole(formData) {
-    const { userID } = await auth();
+    const { userId } = await auth();
 
-    if (!userID) {
+    if (!userId) {
         throw new Error("Unauthorized");
     }
 

@@ -1,4 +1,6 @@
 import { getCurrentUser } from "@/actions/onbording";
+import { redirect } from "next/navigation";
+
 import React from "react";
 
 export const metadata = {
