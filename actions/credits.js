@@ -14,7 +14,7 @@ const PLAN_CREDITS = {
 // Each appointment costs 2 credits
 const APPOINTMENT_CREDIT_COST = 2;
 
-export async function checkAndAllocateCredits(userId) {
+export async function checkAndAllocateCredits(user) {
   try {
     if (!user) {
         return null;
@@ -49,7 +49,7 @@ export async function checkAndAllocateCredits(userId) {
       return user;
     }
 
-    const currentMonth = format (new Date(), "yyyy-MM");
+    const currentMonth = format(new Date(), "yyyy-MM");
 
     if (user.transactions.length > 0) {
       const latestTransaction = user.transactions[0];
@@ -63,7 +63,7 @@ export async function checkAndAllocateCredits(userId) {
         transactionMonth === currentMonth &&
         transactionPlan === currentPlan
       ) {
-        return user;
+        return user ;
       }
     }
 
