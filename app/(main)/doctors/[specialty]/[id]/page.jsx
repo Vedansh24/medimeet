@@ -2,6 +2,7 @@ import { getDoctorById, getAvailableTimeSlots } from "@/actions/appointments";
 import { redirect } from "next/navigation";
 import DoctorProfile from "./_components/doctor-profile";
 
+
 export default async function DoctorProfilePage({ params }) {
   const { id } = await params;
 
